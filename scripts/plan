@@ -1,0 +1,28 @@
+board - start with plain background
+      - start button
+      - reset button
+      - scoreboard
+      - leaderboard?
+
+grid - create 15*15 grid
+     - snake touch edges of grid-Game over
+     -
+
+snake - start with single grid - pick default starting position
+      - can move up, down, left, right
+      - add one grid with each food consumed
+      - snake can't hit itself
+      
+
+food - appears in random boxes on grid
+     - disappears after snake eats it
+     - reappears in new box
+
+Questions
+how the snake moves across board?
+what happens when snake touches food?
+speed up game?
+
+
+  EXTRA
+  -  player ability to pick snake or food type before starting?
