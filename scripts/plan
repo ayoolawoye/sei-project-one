@@ -1,27 +1,29 @@
 board - start with plain background
-      - start button
-      - reset button
-      - scoreboard
+      - start button- scoreboard 0 and snake starts moving
+      - reset button- scoreboard 0 and snake starts moving
+      - scoreboard - 10 points added when 1 food disappears
       - leaderboard?
 
 grid - create 15*15 grid
      - snake touch edges of grid-Game over
+     - create grid like in class
+     - border of grid triggers game over - give outer box a class of its own which causes game to end
      -
 
-snake - start with single grid - pick default starting position
-      - can move up, down, left, right
+snake - start with single grid box - pick default starting position
+      - snake can move up, down, left, right
       - add one grid with each food consumed
-      - snake can't hit itself
+      - snake can't hit itself - if first snake box touches any body box, triggers game over
       
 
-food - appears in random boxes on grid
+food - appears in random boxes on grid - add food in randomly generated box- look at work with Jesse
      - disappears after snake eats it
      - reappears in new box
 
 Questions
 how the snake moves across board?
 what happens when snake touches food?
-speed up game?
+speed up game? set intervals
 
 
   EXTRA
