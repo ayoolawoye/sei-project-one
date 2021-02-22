@@ -11,7 +11,7 @@ function init() {
 
   const width = 10
   const cellCount = width * width
-
+  const cells = []
 
 
 
@@ -20,7 +20,7 @@ function init() {
       const cell = document.createElement('div')
       cell.innerText = i
       grid.appendChild(cell)
-
+      cells.push(cell)
     }
   }
 
