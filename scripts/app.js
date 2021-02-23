@@ -6,6 +6,7 @@ function init() {
   const currentScore = document.querySelector('.currentScore')
 
   let scoreCount = 0
+  let timerID
 
   currentScore.innerHTML = scoreCount
 
@@ -16,6 +17,7 @@ function init() {
   const startingSnakePosition = 0
   let currentSnakePosition = 0
   const startingFoodPosition = 35
+  let currentsnakeDirection = 'right'
 
   function createGrid(startingSnakePosition) {
     for (let i = 0; i < cellCount; i++) {
@@ -49,13 +51,13 @@ function init() {
     removeSnake(currentSnakePosition)
 
     if (key === 39 && currentSnakePosition % width !== width - 1) {
-      currentSnakePosition++
+      currentsnakeDirection = 'right'
     } else if (key === 37 && currentSnakePosition % width !== 0) {
-      currentSnakePosition--
+      currentsnakeDirection = 'left'
     } else if (key === 38 && currentSnakePosition >= width) {
-      currentSnakePosition -= width
+      currentsnakeDirection = 'up'
     } else if (key === 40 && currentSnakePosition + width <= width * width - 1) {
-      currentSnakePosition += width
+      currentsnakeDirection = 'down'
     } else {
       console.log('INVALID KEY')
     }
@@ -70,28 +72,39 @@ function init() {
   createGrid(startingSnakePosition)
 
 
-  // function snakeMovement() {
-  //   let timerID = setInterval(() => {
-  //     console.log('here')
-  //     remove snake from old class
-  //     if currentdirection = north(snake position - width), east etc
-  //     update position -
-  //       add snake class back in
+  function snakeMovement() {
+    timerID = setInterval(() => {
 
-  //   }, 1000)
-  // }
-  // snakeMovement()
+      removeSnake(currentSnakePosition)
+
+      if (currentsnakeDirection === 'up') {
+        currentSnakePosition = currentSnakePosition - width
+      } else if (currentsnakeDirection === 'down') {
+        currentSnakePosition = currentSnakePosition + width
+      } else if (currentsnakeDirection === 'left') {
+        currentSnakePosition = currentSnakePosition - 1
+      } else if (currentsnakeDirection === 'right') {
+        currentSnakePosition = currentSnakePosition + 1
+      }
+
+
+      addSnake(currentSnakePosition)
+
+    }, 1000)
+  }
+  snakeMovement()
 
 
   // function startGame() {
-  // snake starts moving from starting position
-  // current score starts from  0
+  //   snake starts moving from starting position
+  //   current score starts from  0
   // }
 
-  // function resetGame() {
-  //   snake starts moving from starting position
-  //   current score resets to 0
-  // }
+  function resetGame() {
+    clearInterval(timerID)
+    // snake starts moving from starting position
+    // current score resets to 0
+  }
 
   // function currentScore() {
   //   when snake class === food class
@@ -103,12 +116,15 @@ function init() {
 
   // function newFoodPosition() {
   //   let randomNumber = Math.floor(Math.random() * 24)
-  // when 
-  // addFood[randomNumber].classList.add
+  //   if (snake class === food class) {
+  //     addFood[randomNumber].classList.add
+  //   }
+
+
   // }
 
   // startButton.addEventListener('click', startGame)
-  // resetButton.addEventListener('click', resetGame)
+  resetButton.addEventListener('click', resetGame)
 
 
 
