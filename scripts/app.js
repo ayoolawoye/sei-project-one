@@ -14,7 +14,7 @@ function init() {
   const cells = []
 
   const startingSnakePosition = 0
-  const currentSnakePosition = 0
+  let currentSnakePosition = 0
   const startingFoodPosition = 35
 
   function createGrid(startingSnakePosition) {
@@ -67,11 +67,20 @@ function init() {
   document.addEventListener('keyup', handleKeyUp)
 
 
-
-
-
   createGrid(startingSnakePosition)
 
+
+  // function snakeMovement() {
+  //   let timerID = setInterval(() => {
+  //     console.log('here')
+  //     remove snake from old class
+  //     if currentdirection = north(snake position - width), east etc
+  //     update position -
+  //       add snake class back in
+
+  //   }, 1000)
+  // }
+  // snakeMovement()
 
 
   // function startGame() {
@@ -87,6 +96,9 @@ function init() {
   // function currentScore() {
   //   when snake class === food class
   //   add 100 to current score
+  // }
+  // function snakeMovement() {
+
   // }
 
   // function newFoodPosition() {
