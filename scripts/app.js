@@ -18,6 +18,7 @@ function init() {
   let currentSnakePosition = 0
   const startingFoodPosition = 35
   let currentsnakeDirection = 'right'
+  let currentFoodPosition
 
 
   function createGrid(startingSnakePosition) {
@@ -28,7 +29,7 @@ function init() {
       cells.push(cell)
     }
     addSnake(startingSnakePosition)
-    addFood(startingFoodPosition)
+    newFoodPosition()
   }
 
   //Add and Remove Functions
@@ -75,8 +76,9 @@ function init() {
 
 
   function snakeMovement() {
-    timerID = setInterval(() => {
 
+    timerID = setInterval(() => {
+      eatFood()
       removeSnake(currentSnakePosition)
 
       if (currentsnakeDirection === 'up') {
@@ -90,29 +92,31 @@ function init() {
       }
       addSnake(currentSnakePosition)
 
+
     }, 1000)
   }
   snakeMovement()
 
   //Food Functions
 
-  // function eatFood() {
-  //   if (currentSnakePosition.classList.contains('food')) {
-  //     removeFood(position)
-  //   }
-  //   newFoodPosition()
-  // }
+  function eatFood() {
+    if (cells[currentSnakePosition].classList.contains('food')) {
+      cells[currentFoodPosition].classList.remove('food')
+    }
+    // newFoodPosition()
+  }
 
-  // function newFoodPosition() {
-  //   let randomNumber = Math.floor(Math.random() * 100)
-  //   if (snake class === food class) {
-  //     addFood[randomNumber].classList.add
-  //   }
+  function newFoodPosition() {
+    let randomNumber = Math.floor(Math.random() * 100)
+    currentFoodPosition = randomNumber
+    cells[randomNumber].classList.add('food')
 
-  //  function addSnakeLength() {
-  //     eatFood()
+  }
+
+  // function addSnakeLength() {
+  //   eatFood()
   //   addSnake()
-  //   }
+  // }
 
   //Start, Reset and Scores
 
@@ -128,8 +132,8 @@ function init() {
   }
 
   // function currentScore() {
-  //  eatFood() 
-  //   scoreCount = scoreCount + 100 
+  //   eatFood()
+  //   scoreCount = scoreCount + 100
   // }
 
 
