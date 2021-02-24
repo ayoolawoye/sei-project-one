@@ -42,6 +42,9 @@ function init() {
     cells[position].classList.add('food')
   }
 
+  function removeFood(position) {
+    cells[position].classList.remove('food')
+  }
 
   // * Move Snake
 
@@ -94,6 +97,14 @@ function init() {
   }
   snakeMovement()
 
+  function eatFood() {
+    if (currentSnakePosition.classList.contains('food')) {
+      removeFood(position)
+    }
+    addFood(position) in random location
+  }
+
+
 
   // function startGame() {
   //   snake starts moving from starting position
@@ -114,21 +125,21 @@ function init() {
 
   // }
 
-  // function newFoodPosition() {
-  //   let randomNumber = Math.floor(Math.random() * 24)
-  //   if (snake class === food class) {
-  //     addFood[randomNumber].classList.add
-  //   }
+  function newFoodPosition() {
+    let randomNumber = Math.floor(Math.random() * 100)
+    if (snake class === food class) {
+      addFood[randomNumber].classList.add
+    }
 
 
-  // }
+    // }
 
-  // startButton.addEventListener('click', startGame)
-  resetButton.addEventListener('click', resetGame)
-
-
-
-}
+    // startButton.addEventListener('click', startGame)
+    resetButton.addEventListener('click', resetGame)
 
 
-window.addEventListener('DOMContentLoaded', init)
+
+  }
+
+
+  window.addEventListener('DOMContentLoaded', init)
