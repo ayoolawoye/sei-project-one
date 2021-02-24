@@ -19,6 +19,7 @@ function init() {
   const startingFoodPosition = 35
   let currentsnakeDirection = 'right'
 
+
   function createGrid(startingSnakePosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
@@ -29,6 +30,8 @@ function init() {
     addSnake(startingSnakePosition)
     addFood(startingFoodPosition)
   }
+
+  //Add and Remove Functions
 
   function addSnake(position) {
     cells[position].classList.add('snake')
@@ -46,7 +49,7 @@ function init() {
     cells[position].classList.remove('food')
   }
 
-  // * Move Snake
+  // * Snake Functions
 
   function handleKeyUp(event) {
     const key = event.keyCode
@@ -68,10 +71,6 @@ function init() {
     addSnake(currentSnakePosition)
   }
 
-  // * Event listeners
-  document.addEventListener('keyup', handleKeyUp)
-
-
   createGrid(startingSnakePosition)
 
 
@@ -89,57 +88,58 @@ function init() {
       } else if (currentsnakeDirection === 'right') {
         currentSnakePosition = currentSnakePosition + 1
       }
-
-
       addSnake(currentSnakePosition)
 
     }, 1000)
   }
   snakeMovement()
 
-  function eatFood() {
-    if (currentSnakePosition.classList.contains('food')) {
-      removeFood(position)
-    }
-    addFood(position) in random location
-  }
+  //Food Functions
 
-
-
-  // function startGame() {
-  //   snake starts moving from starting position
-  //   current score starts from  0
+  // function eatFood() {
+  //   if (currentSnakePosition.classList.contains('food')) {
+  //     removeFood(position)
+  //   }
+  //   newFoodPosition()
   // }
+
+  // function newFoodPosition() {
+  //   let randomNumber = Math.floor(Math.random() * 100)
+  //   if (snake class === food class) {
+  //     addFood[randomNumber].classList.add
+  //   }
+
+  //  function addSnakeLength() {
+  //     eatFood()
+  //   addSnake()
+  //   }
+
+  //Start, Reset and Scores
+
+  function startGame() {
+    // snakeMovement(startingSnakePosition)
+    // scoreCount = 0
+  }
 
   function resetGame() {
     clearInterval(timerID)
     // snake starts moving from starting position
-    // current score resets to 0
+    // scoreCount = 0
   }
 
   // function currentScore() {
-  //   when snake class === food class
-  //   add 100 to current score
-  // }
-  // function snakeMovement() {
-
+  //  eatFood() 
+  //   scoreCount = scoreCount + 100 
   // }
 
-  function newFoodPosition() {
-    let randomNumber = Math.floor(Math.random() * 100)
-    if (snake class === food class) {
-      addFood[randomNumber].classList.add
-    }
+
+  //Event Listeners
+
+  document.addEventListener('keyup', handleKeyUp)
+  startButton.addEventListener('click', startGame)
+  resetButton.addEventListener('click', resetGame)
+
+}
 
 
-    // }
-
-    // startButton.addEventListener('click', startGame)
-    resetButton.addEventListener('click', resetGame)
-
-
-
-  }
-
-
-  window.addEventListener('DOMContentLoaded', init)
+window.addEventListener('DOMContentLoaded', init)
