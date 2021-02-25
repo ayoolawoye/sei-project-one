@@ -35,7 +35,7 @@ function init() {
   //Add and Remove Functions
 
   function addSnake(position) {
-    cells[position].classList.add('snake')
+    cells[position].classList.add('snake') //says something is wrong here
   }
 
   function removeSnake(position) {
@@ -92,18 +92,19 @@ function init() {
       }
       addSnake(currentSnakePosition)
 
-
     }, 1000)
   }
-  snakeMovement()
 
   //Food Functions
 
   function eatFood() {
     if (cells[currentSnakePosition].classList.contains('food')) {
       cells[currentFoodPosition].classList.remove('food')
+
     }
-    // newFoodPosition()
+    scoreCount += 100
+    currentScore.innerHTML = scoreCount //adds to the score for each snake move. fix this
+
   }
 
   function newFoodPosition() {
@@ -121,8 +122,8 @@ function init() {
   //Start, Reset and Scores
 
   function startGame() {
-    // snakeMovement(startingSnakePosition)
-    // scoreCount = 0
+    snakeMovement(startingSnakePosition)
+
   }
 
   function resetGame() {
@@ -130,11 +131,6 @@ function init() {
     // snake starts moving from starting position
     // scoreCount = 0
   }
-
-  // function currentScore() {
-  //   eatFood()
-  //   scoreCount = scoreCount + 100
-  // }
 
 
   //Event Listeners
