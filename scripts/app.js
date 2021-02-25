@@ -139,7 +139,6 @@ function init() {
     }
 
 
-
     //Start and Reset 
 
     function startGame() {
