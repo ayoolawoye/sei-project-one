@@ -6,33 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/main.css">
   <script src="./scripts/app.js" charset="utf-8"></script>
-  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">  
+  <title>Snake Chain Game</title>
 </head>
 <body>
   <header>
-    <h1 class = "gameName">Snake Game</h1>
-    <h2 class = "gameSummary">Blah blah blah</h2>
+    <h1 class = "gameName">Snake Chain Game</h1>
+    <!-- <h2 class = "gameSummary">Blah blah blah</h2> -->
   </header>
   <div class="scoreContainer">
     <div class = "startBox">
-      <button class = "startButton">Start</button>
-      <button class = "resetButton">Reset</button>
+      <button class = "startButton" id="button">START</button>
+      <button class = "stopButton" id="button">STOP</button>
     </div>
     <div class = "scoreBox">
       <div class = "currentScoreContainer">
-        <div class = "currentScoreTitle">Current Score</div>
+        <div class = "currentScoreTitle">Score</div>
         <div class = "currentScore">Score</div>
       </div>
-      <div class = "finalScoreContainer">
+      <!-- <div class = "finalScoreContainer">
         <div class = "finalScoreTitle">Final Score</div>
         <div class = "finalScore">Score</div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class= "gridContainer">
     <div class= "grid">
     </div>
   </div>
-  
+  <div class="endScore">
+    End Score <span> Score</span>
+  </div>
 </body>
 </html>

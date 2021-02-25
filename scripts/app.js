@@ -2,7 +2,7 @@ function init() {
 
   const grid = document.querySelector('.grid')
   const startButton = document.querySelector('.startButton')
-  const resetButton = document.querySelector('.resetButton')
+  const stopButton = document.querySelector('.stopButton')
   const currentScore = document.querySelector('.currentScore')
 
   let scoreCount = 0
@@ -38,15 +38,12 @@ function init() {
   function addSnake(position) {
     cells[position].classList.add('snake') //says something is wrong here
   }
-
   function removeSnake(position) {
     cells[position].classList.remove('snake')
   }
-
   function addFood(position) {
     cells[position].classList.add('food')
   }
-
   function removeFood(position) {
     cells[position].classList.remove('food')
   }
@@ -144,7 +141,7 @@ function init() {
 
   }
 
-  function resetGame() {
+  function stopGame() {
     clearInterval(timerID)
     // snake starts moving from starting position
     // scoreCount = 0
@@ -155,7 +152,7 @@ function init() {
 
   document.addEventListener('keyup', handleKeyUp)
   startButton.addEventListener('click', startGame)
-  resetButton.addEventListener('click', resetGame)
+  stopButton.addEventListener('click', stopGame)
 
 }
 

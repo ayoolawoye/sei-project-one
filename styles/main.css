@@ -5,8 +5,15 @@
 body {
   height: 100vh;
   margin: 0;
+  font-family: 'Potta One', cursive;
+  background-color: green;
   /* background-image: url('https://i.imgur.com/jfIf6O2.jpg');
   background-size: cover; */
+}
+
+header {
+  text-align: center;
+  color: white;
 }
 
 .gridContainer {
@@ -50,3 +57,19 @@ body {
   background-size: contain;
   cursor: pointer;
 }  
+
+.scoreContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+#button {
+  background-color: #006400;
+  border-color: white;
+  color: white;
+  padding: 5px;
+  width: 100px;
+  font:'Potta One';
+  font-weight: bold;
+  border-radius: 4px;
+}
