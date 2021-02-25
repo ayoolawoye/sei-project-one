@@ -103,7 +103,7 @@ function init() {
 
 
 
-    }, 1000)
+    }, 900)
   }
 
   //Food Functions
@@ -133,28 +133,34 @@ function init() {
   //   //
   //   // addSnake()
   // }
+  function hitsEdge() {
+    if (snake hits edge) {
+      window.prompt(`Game Over, your score is ${currentSnakeLength}`)
+    }
 
-  //Start and Reset 
 
-  function startGame() {
-    snakeMovement(startingSnakePosition)
+
+    //Start and Reset 
+
+    function startGame() {
+      snakeMovement(startingSnakePosition)
+
+    }
+
+    function stopGame() {
+      clearInterval(timerID)
+      // snake starts moving from starting position
+      // scoreCount = 0
+    }
+
+
+    //Event Listeners
+
+    document.addEventListener('keyup', handleKeyUp)
+    startButton.addEventListener('click', startGame)
+    stopButton.addEventListener('click', stopGame)
 
   }
 
-  function stopGame() {
-    clearInterval(timerID)
-    // snake starts moving from starting position
-    // scoreCount = 0
-  }
 
-
-  //Event Listeners
-
-  document.addEventListener('keyup', handleKeyUp)
-  startButton.addEventListener('click', startGame)
-  stopButton.addEventListener('click', stopGame)
-
-}
-
-
-window.addEventListener('DOMContentLoaded', init)
+  window.addEventListener('DOMContentLoaded', init)
