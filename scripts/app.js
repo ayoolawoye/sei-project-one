@@ -19,7 +19,8 @@ function init() {
   const startingFoodPosition = 35
   let currentsnakeDirection = 'right'
   let currentFoodPosition
-
+  let currentSnakeArray = [0]
+  let currentSnakeLength = 1
 
   function createGrid(startingSnakePosition) {
     for (let i = 0; i < cellCount; i++) {
@@ -79,18 +80,31 @@ function init() {
 
     timerID = setInterval(() => {
       eatFood()
-      removeSnake(currentSnakePosition)
+      // removeSnake(currentSnakePosition)
+      for (let index = currentSnakeArray.length - 1; index > currentSnakeArray.length - 1 - currentSnakeLength; index--) {
+        console.log(currentSnakeArray[index])
+        removeSnake(currentSnakeArray[index])
+      }
 
       if (currentsnakeDirection === 'up') {
         currentSnakePosition = currentSnakePosition - width
+        currentSnakeArray.push(currentSnakePosition)
       } else if (currentsnakeDirection === 'down') {
         currentSnakePosition = currentSnakePosition + width
+        currentSnakeArray.push(currentSnakePosition)
       } else if (currentsnakeDirection === 'left') {
         currentSnakePosition = currentSnakePosition - 1
+        currentSnakeArray.push(currentSnakePosition)
       } else if (currentsnakeDirection === 'right') {
         currentSnakePosition = currentSnakePosition + 1
+        currentSnakeArray.push(currentSnakePosition)
       }
-      addSnake(currentSnakePosition)
+      for (let index = currentSnakeArray.length - 1; index > currentSnakeArray.length - 1 - currentSnakeLength; index--) {
+        console.log(currentSnakeArray[index])
+        addSnake(currentSnakeArray[index])
+      }
+
+
 
     }, 1000)
   }
@@ -100,10 +114,12 @@ function init() {
   function eatFood() {
     if (cells[currentSnakePosition].classList.contains('food')) {
       cells[currentFoodPosition].classList.remove('food')
-
+      newFoodPosition()
+      currentSnakeLength++
+      scoreCount += 100
+      currentScore.innerHTML = scoreCount //adds to the score for each snake move. fix this
     }
-    scoreCount += 100
-    currentScore.innerHTML = scoreCount //adds to the score for each snake move. fix this
+
 
   }
 
@@ -115,11 +131,13 @@ function init() {
   }
 
   // function addSnakeLength() {
-  //   eatFood()
-  //   addSnake()
+  //   // array f
+  //   keep track of every grid snake moves through
+  //   //
+  //   // addSnake()
   // }
 
-  //Start, Reset and Scores
+  //Start and Reset 
 
   function startGame() {
     snakeMovement(startingSnakePosition)
