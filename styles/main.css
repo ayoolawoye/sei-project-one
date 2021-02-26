@@ -41,11 +41,11 @@ header {
   justify-content: center;
   height: 600px;
   width: 600px;
-  background-color: lightyellow;
+  background-color:#F0E68C;
 }
 
 .grid div {
-  border: 1px solid lightgrey;
+  /* border: 1px solid lightgrey; */
   flex-grow: 1;
   height: 10%;
   width: 10%;

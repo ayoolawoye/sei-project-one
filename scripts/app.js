@@ -25,7 +25,7 @@ function init() {
   function createGrid(startingSnakePosition) {
     for (let i = 0; i < cellCount; i++) {
       const cell = document.createElement('div')
-      cell.innerText = i
+      // cell.innerText = i
       grid.appendChild(cell)
       cells.push(cell)
     }
@@ -85,10 +85,20 @@ function init() {
 
       if (currentsnakeDirection === 'up') {
         currentSnakePosition = currentSnakePosition - width
-        currentSnakeArray.push(currentSnakePosition)
+        if (currentSnakePosition < 0) {
+          stopGame()
+        } else {
+          currentSnakeArray.push(currentSnakePosition)
+        }
+
       } else if (currentsnakeDirection === 'down') {
         currentSnakePosition = currentSnakePosition + width
-        currentSnakeArray.push(currentSnakePosition)
+        if (currentSnakePosition > width * width) {
+          stopGame()
+        } else {
+          currentSnakeArray.push(currentSnakePosition)
+        }
+
       } else if (currentsnakeDirection === 'left') {
         currentSnakePosition = currentSnakePosition - 1
         currentSnakeArray.push(currentSnakePosition)
@@ -101,8 +111,6 @@ function init() {
         addSnake(currentSnakeArray[index])
       }
 
-
-
     }, 900)
   }
 
@@ -114,7 +122,7 @@ function init() {
       newFoodPosition()
       currentSnakeLength++
       scoreCount += 100
-      currentScore.innerHTML = scoreCount //adds to the score for each snake move. fix this
+      currentScore.innerHTML = scoreCount
     }
 
 
@@ -127,39 +135,31 @@ function init() {
 
   }
 
-  // function addSnakeLength() {
-  //   // array f
-  //   keep track of every grid snake moves through
-  //   //
-  //   // addSnake()
-  // }
-  function hitsEdge() {
-    if (snake hits edge) {
-      window.prompt(`Game Over, your score is ${currentSnakeLength}`)
-    }
-
-
-    //Start and Reset 
-
-    function startGame() {
-      snakeMovement(startingSnakePosition)
-
-    }
-
-    function stopGame() {
-      clearInterval(timerID)
-      // snake starts moving from starting position
-      // scoreCount = 0
-    }
-
-
-    //Event Listeners
-
-    document.addEventListener('keyup', handleKeyUp)
-    startButton.addEventListener('click', startGame)
-    stopButton.addEventListener('click', stopGame)
+  function increaseSpeed() {
 
   }
 
 
-  window.addEventListener('DOMContentLoaded', init)
+
+  //Start and Reset 
+
+  function startGame() {
+    snakeMovement(startingSnakePosition)
+  }
+
+  function stopGame() {
+    clearInterval(timerID)
+    window.prompt(`Game Over! Your score is ${scoreCount}!`)
+  }
+
+
+  //Event Listeners
+
+  document.addEventListener('keyup', handleKeyUp)
+  startButton.addEventListener('click', startGame)
+  stopButton.addEventListener('click', stopGame)
+
+}
+
+
+window.addEventListener('DOMContentLoaded', init)
