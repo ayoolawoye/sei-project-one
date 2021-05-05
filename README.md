@@ -1,7 +1,7 @@
 # sei-project-one
-General Assembly Project 1
+# General Assembly Project 1
 
-Table of Contents:
+## Table of Contents:
 
 Project Overview
   The Brief
@@ -15,10 +15,10 @@ Future Content and Improvements
 Key Learnings
 Timeframe
 
-Goal
+## Goal
 To create a fully functioning browser-based game of your choice using vanilla JavaScript
 
-Technologies Used
+## Technologies Used
 HTML5 
 CSS3 with animation
 JavaScript (ES6)
@@ -26,16 +26,16 @@ Git
 GitHub
 Google Fonts
 
-Snake Game
+## Snake Game
 Play deployed version
 
 (video of game)
 
-Controls
+## Controls
 Click the Start Button to start the game
 Use the left ( left-arrow ), right ( right-arrow ), up ( up-arrow ) and down ( down-arrow) arrow keys to move the Snake around the grid.
 
-Approach Taken and Timeline:
+## Approach Taken and Timeline:
 Key Dates:
 
 Day 1 - Planning!
@@ -56,12 +56,12 @@ Day 7-8:
 Day 9:
 
 
-Bugs
+## Bugs
 
-Wins
+## Wins
 
-Challenges
+## Challenges
 
-Key Learnings
+## Key Learnings
 
-Future Content
+## Future Content
