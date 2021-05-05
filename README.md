@@ -4,16 +4,17 @@
 ## Table of Contents:
 
 Project Overview
-  The Brief
-  Technologies Used
-  Approach Taken
-Featured Code
-Screenshots
-Bugs
-Wins and Blockers
-Future Content and Improvements
-Key Learnings
-Timeframe
+* Goal
+* Technologies Used
+* Controls
+* Approach Taken and Timeline
+* Featured Code
+* Screenshots
+* Bugs
+* Wins
+* Challenges
+* Key Learnings
+* Future Content
 
 ## Goal
 To create a fully functioning browser-based game of your choice using vanilla JavaScript
@@ -55,6 +56,9 @@ Day 7-8:
 
 Day 9:
 
+## Featured Code
+
+## Screenshots
 
 ## Bugs
 
