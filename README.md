@@ -4,9 +4,9 @@ General Assembly Project 1
 Table of Contents:
 
 Project Overview
-The Brief
-Technologies Used
-Approach Taken
+  The Brief
+  Technologies Used
+  Approach Taken
 Featured Code
 Screenshots
 Bugs
