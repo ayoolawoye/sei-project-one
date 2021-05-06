@@ -33,7 +33,7 @@ Play deployed version
 
 ## Controls
 Click the Start Button to start the game
-Use the left ( left-arrow ), right ( right-arrow ), up ( up-arrow ) and down ( down-arrow) arrow keys to move the Snake around the grid.
+Use the left ( :arrow_left: ), right ( :arrow_right: ), up ( :arrow_up: ) and down ( :arrow_down: ) arrow keys to move the Snake around the grid.
 
 ## Approach Taken and Timeline:
 ###### Key Dates:
