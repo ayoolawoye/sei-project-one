@@ -124,8 +124,6 @@ function init() {
       scoreCount += 100
       currentScore.innerHTML = scoreCount
     }
-
-
   }
 
   function newFoodPosition() {

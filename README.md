@@ -10,6 +10,7 @@ https://ayoolawoye.github.io/sei-project-one/
 
 
 ## Table of Contents:
+
 * Goal
 * Technologies Used
 * Controls
@@ -35,7 +36,6 @@ To create a fully functioning browser-based game of your choice using vanilla Ja
 Click the Start Button to start the game Use the left ( ⬅️ ), right ( ➡️ ), up ( ⬆️ ) and down ( ⬇️ ) arrow keys to move the Snake around the grid.
 
 ## Approach Taken and Timeline:
-
 Day 1: The first day was spent project planning and trying to breakdown the plan into manageable chunks. I used Trello for the project planning and tried to add as much detail as possible. I divided the features into MVP and bonus features. I also became pseudo coding on the first day of the project.
 
 Day 2-3: For MVP, I decided that the snake should be able to move around the grid and the food be eaten by the snake. I started by creating the basic grid structure using HTML and CSS then I wrote the functions for the keys in JavaScript. I started the snake movement function (just so the snake could appear on the grid). 
@@ -54,14 +54,63 @@ Snake movement:
 I had to make sure that the snake was moving in all directions and ensuring the snake was not going off the grid.
 This was set by ensuring there were limits on all edges of the grid.
 (snake movement screenshot)
+```
+function snakeMovement() {
 
-Snake getting longer:
-I had to make sure the snake was getting longer each time the food was being consumed.
+    timerID = setInterval(() => {
+      eatFood()
+      // removeSnake(currentSnakePosition)
+      for (let index = currentSnakeArray.length - 1; index > currentSnakeArray.length - 1 - currentSnakeLength; index--) {
+        console.log(currentSnakeArray[index])
+        removeSnake(currentSnakeArray[index])
+      }
+
+      if (currentsnakeDirection === 'up') {
+        currentSnakePosition = currentSnakePosition - width
+        if (currentSnakePosition < 0) {
+          stopGame()
+        } else {
+          currentSnakeArray.push(currentSnakePosition)
+        }
+
+      } else if (currentsnakeDirection === 'down') {
+        currentSnakePosition = currentSnakePosition + width
+        if (currentSnakePosition > width * width) {
+          stopGame()
+        } else {
+          currentSnakeArray.push(currentSnakePosition)
+        }
+
+      } else if (currentsnakeDirection === 'left') {
+        currentSnakePosition = currentSnakePosition - 1
+        currentSnakeArray.push(currentSnakePosition)
+      } else if (currentsnakeDirection === 'right') {
+        currentSnakePosition = currentSnakePosition + 1
+        currentSnakeArray.push(currentSnakePosition)
+      }
+      for (let index = currentSnakeArray.length - 1; index > currentSnakeArray.length - 1 - currentSnakeLength; index--) {
+        console.log(currentSnakeArray[index])
+        addSnake(currentSnakeArray[index])
+      }
+
+    }, 900)
+  }
+  ```
 
 Food Movement:
 I had to ensure the food(apple) would appear in random boxes on the grid after it had been consumed by the snake.
-(food movement screenshot)
 
+```
+function eatFood() {
+    if (cells[currentSnakePosition].classList.contains('food')) {
+      cells[currentFoodPosition].classList.remove('food')
+      newFoodPosition()
+      currentSnakeLength++
+      scoreCount += 100
+      currentScore.innerHTML = scoreCount
+    }
+  }
+```
 
 ## Bugs: 
 Snake kept on disappearing from the grid. I fixed this by ensuring the grid was ‘secure’ at all the edges.
@@ -72,7 +121,7 @@ A big win was my increased knowledge of JavaScript. I was able to test out using
 
 ## Key Learnings
 
-* JavaScript Fundamentals: This was my first big coding project, and since it was strong on logic - it helped me solidify basic JS concepts & array methods. 
+* JavaScript Fundamentals: This was my first big coding project, and since it was strong on logic - it helped me solidify basic JS concepts & array methods.
 * Knowing when to take a break: This project taught me that I should step away if I've been trying to solve something for too long and not making progress. The break can give you much-needed rest and you'll likely come back with a better idea on how to solve the problem.
 
 ## Future Content: 
