@@ -6,7 +6,6 @@ body {
   height: 100vh;
   margin: 0;
   font-family: 'Potta One', cursive;
-  /* background-image: url('https://i.imgur.com/zrEwogy.jpg'); */
   background-color: #6B8E23;
   background-size: cover;
 }
@@ -45,7 +44,6 @@ header {
 }
 
 .grid div {
-  /* border: 1px solid lightgrey; */
   flex-grow: 1;
   height: 10%;
   width: 10%;
@@ -59,7 +57,7 @@ header {
 }
 
 .grid div.snake {
-  background-image: url('https://i.imgur.com/jpC49W2.png');
+  background-image: url('../assets/snake.png');
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
